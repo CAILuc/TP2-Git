@@ -1,0 +1,25 @@
+﻿CAI
+Luc                        TP2-Git
+
+
+MERGE
+1. En initialisant le répertoire, en faisant git status, la commande nous indique la branche sur laquelle on se trouve et également qu’aucun commit n’a encore été fait.
+2. On crée le fichier avec la commande echo “Texte” > README.md puis on fait git add README.md et puis git commit -m “#TP2 : Gestion des branches”. On vérifie après que le commit à bien été fait en faisant git status qui renvoie qu’il n’y a plus de commit en cours et git log qui nous montre le commit.
+3. On utilise la commande vi README.md pour accéder au texte du fichier et y ajouter le texte voulu. On fait ensuite git add . et git commit -m “Description du commit”. On vérifie encore avec git status et git log.
+4. La console nous indique un conflit entre les derniers commits de la branche develop et feature1.
+5. git switch -c feature2 depuis develop, vi README.md et on y modifie le fichier, git add . puis git commit -m
+6. git switch develop, git switch -c feature3 depuis develop, vi README.md et on y modifie le fichier, git add . puis git commit -m
+7. git switch develop, git merge feature2, le merge se fait sans conflit
+git merge feature3, un conflit apparaît
+
+
+REBASE
+1. git switch -c feature4, vi README.md, git add ., git commit -m
+2. vi README.md, git add ., git commit -m
+3. vi README.md, git add ., git commit -m
+4. git rebase -i “hash sur lequel on veut rebase”, dans le fichier après, on ajoute pick avec le hase sur celui qu’on veut rebase, on change pick par squash pour garder les modifications faites dans les autres fichiers
+5. git switch develop, vi README.md, git add ., git commit -m
+6. git rebase feature4
+7. La commande merge permet de fusionner les fichiers d’une branche avec les fichiers d’une autre branche, c’est le moyen de mettre en commun le travail. Elle permet également d’observer les modifications qui sont faites sur la même zone de texte et permet de souligner ces conflits qui pourront être gérer avant tout problème.
+8. La commande rebase permet de changer la version dans lequel se trouve nos fichiers, on peut notamment se rebase dans une version précédente sans conflit
+9. Image sur le GitHub
